@@ -42,10 +42,10 @@ public class QueryProcessor {
         else if(query.contains("largest")){
             List<Integer> list = new ArrayList<>();
             String[] splitArr = query.split(":");
-            String output = splitArr[1];
+            String output = splitArr[2];
             output = output.replaceAll(",", "");
 
-            char[] chars = splitArr[1].toCharArray();
+            char[] chars = splitArr[2].toCharArray();
 
             int result = 0;
 
