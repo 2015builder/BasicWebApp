@@ -43,7 +43,7 @@ public class QueryProcessor {
             List<Integer> list = new ArrayList<>();
             String[] splitArr = query.split(":");
             String output = splitArr[1];
-            output = output.replaceAll(", ", "");
+            output = output.replaceAll(",", "");
 
             char[] chars = splitArr[1].toCharArray();
 
@@ -72,6 +72,7 @@ public class QueryProcessor {
 
         System.out.println(queryProcessor.process(query));
 
-        query = ": largest 21, 34, ,56 ,78, ";
+        query = ": largest 21, 34, 56, 78";
+        System.out.println(queryProcessor.process(query));
     }
 }
