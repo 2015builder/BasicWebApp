@@ -54,7 +54,7 @@ public class QueryProcessor {
                     int val = Integer.parseInt(element);
                     list.add(val);
                 } catch (NumberFormatException e) {
-                    System.out.println("Input String cannot be parsed to Integer.");
+                    //System.out.println("Input String cannot be parsed to Integer.");
                 }
             }
             return String.valueOf(list.stream().max(Comparator.comparing(Integer::intValue)).orElse(list.get(0)));
