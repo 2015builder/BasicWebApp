@@ -42,12 +42,14 @@ public class QueryProcessor {
         else if(query.contains("largest")){
             List<Integer> list = new ArrayList<>();
             String[] splitArr = query.split(":");
+            String output = splitArr[1];
+            output = output.replaceAll(", ", "");
 
             char[] chars = splitArr[1].toCharArray();
 
             int result = 0;
 
-            String[] splitArr2 = splitArr[1].split(" ");
+            String[] splitArr2 = output.split(" ");
 
             for(String element: splitArr2){
                 try {
@@ -62,5 +64,14 @@ public class QueryProcessor {
         else { // TODO extend the programm here
             return "";
         }
+    }
+
+    public static void main(String[] args) {
+        String query = ": 1 plus 3";
+        QueryProcessor queryProcessor = new QueryProcessor();
+
+        System.out.println(queryProcessor.process(query));
+
+        query = ": largest 21, 34, ,56 ,78, ";
     }
 }
